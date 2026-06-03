@@ -1,8 +1,8 @@
-# 🌦️ Weather AI Agent
+#  Weather AI Agent
 
 An AI-powered Weather Agent built using **Python**, **LangChain**, **Ollama (Llama 3)**, and the **OpenWeather API**. The agent interacts with the user, asks for a city name, retrieves real-time weather information, and presents the results in a natural and user-friendly format.
 
-## 🚀 Features
+##  Features
 
 * Interactive AI agent interface
 * Asks the user for a city name
@@ -14,7 +14,7 @@ An AI-powered Weather Agent built using **Python**, **LangChain**, **Ollama (Lla
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * Python 3
 * LangChain
@@ -26,7 +26,7 @@ An AI-powered Weather Agent built using **Python**, **LangChain**, **Ollama (Lla
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 WhetherAgent/
@@ -102,7 +102,7 @@ https://openweathermap.org/api
 
 ---
 
-## ▶️ Running the Project
+## Running the Project
 
 ```bash
 python weather_agent.py
@@ -134,7 +134,7 @@ Have a great day!
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 ```text
 User
@@ -163,13 +163,13 @@ User
 
 ---
 
-## 🔒 Security
+##  Security
 
 API keys are stored in a local `.env` file and are not committed to the repository. Make sure to add `.env` to `.gitignore` before pushing code to GitHub.
 
 ---
 
-## 📌 Assignment Objective
+##  Assignment Objective
 
 Create an AI agent that asks the user for a city name and returns current weather information. Python was used as the implementation language, with LangChain and Ollama providing the AI capabilities.
 
