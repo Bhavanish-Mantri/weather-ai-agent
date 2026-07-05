@@ -1,108 +1,99 @@
-#  Weather AI Agent
+# 🌦️ Weather AI Agent
 
-An AI-powered Weather Agent built using **Python**, **LangChain**, **Ollama (Llama 3)**, and the **OpenWeather API**. The agent interacts with the user, asks for a city name, retrieves real-time weather information, and presents the results in a natural and user-friendly format.
-
-##  Features
-
-* Interactive AI agent interface
-* Asks the user for a city name
-* Retrieves real-time weather data
-* Uses LangChain with a local Llama 3 model via Ollama
-* Generates natural language weather responses
-* Runs completely locally without requiring OpenAI API credits
-* Easy to extend with additional tools and capabilities
+A simple AI-powered Weather Agent built using **Python** and the **OpenWeather API**. The application accepts a city name from the user, retrieves real-time weather information, and displays the temperature, humidity, and weather condition. The project also includes **DeepEval**-based evaluation to assess the quality of the AI agent's responses.
 
 ---
 
-##  Technologies Used
+## Features
 
-* Python 3
-* LangChain
-* Ollama
-* Llama 3
-* OpenWeather API
-* Requests
-* Python Dotenv
+- Get real-time weather information for any city.
+- Displays:
+  - Temperature
+  - Humidity
+  - Weather Condition
+- Simple command-line interface.
+- AI Agent evaluation using the **DeepEval** framework.
+- Uses **Gemini** as the evaluation model.
 
 ---
 
-##  Project Structure
+## Technologies Used
+
+- Python 3
+- OpenWeather API
+- Requests
+- Python Dotenv
+- DeepEval
+- Google Gemini API
+
+---
+
+## Project Structure
 
 ```text
-WhetherAgent/
+weather-ai-agent/
 │
-├── weather_agent.py      # Main AI agent
-├── weather_tool.py       # Weather API integration
-├── .env                  # Environment variables (not committed)
-├── .gitignore
+├── weather_agent.py      # Main Weather AI Agent
+├── weather_tool.py       # OpenWeather API integration
+├── evaluate.py           # DeepEval evaluation script
 ├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## Installation
 
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Bhavanish-Mantri/weather-ai-agent.git
 cd weather-ai-agent
 ```
 
-### 2. Create a Virtual Environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the environment:
+Activate it:
 
-**Windows**
+Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Linux / macOS**
+Linux/macOS
 
 ```bash
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+---
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Install Ollama
+---
 
-Download and install Ollama from:
+## Configure Environment Variables
 
-https://ollama.com/download
-
-### 5. Download Llama 3
-
-```bash
-ollama pull llama3
-```
-
-### 6. Configure Environment Variables
-
-Create a `.env` file in the project root:
+Create a `.env` file:
 
 ```env
-OPENWEATHER_API_KEY=YOUR_API_KEY_HERE
+OPENWEATHER_API_KEY=YOUR_OPENWEATHER_API_KEY
+GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
 ```
-
-Get a free API key from:
-
-https://openweathermap.org/api
 
 ---
 
-## Running the Project
+## Run the Weather AI Agent
 
 ```bash
 python weather_agent.py
@@ -110,68 +101,49 @@ python weather_agent.py
 
 Example:
 
-```text
+```
 Hello! I am your AI Weather Agent.
 
-Which city would you like the weather for?
-
+Enter city name:
 Jaipur
-```
 
-Output:
-
-```text
-AI Agent Response:
-
-The current weather in Jaipur is:
-
-🌡 Temperature: 36°C
-💧 Humidity: 42%
-☀ Condition: Clear Sky
-
-Have a great day!
+Weather in Jaipur
+Temperature: 36°C
+Humidity: 40%
+Condition: clear sky
 ```
 
 ---
 
-##  How It Works
+## Run the DeepEval Evaluation
 
-```text
-User
-  │
-  ▼
-Weather Agent
-  │
-  ▼
-Weather Tool
-  │
-  ▼
-OpenWeather API
-  │
-  ▼
-Weather Data
-  │
-  ▼
-Llama 3 (Ollama)
-  │
-  ▼
-Natural Language Response
-  │
-  ▼
-User
+```bash
+python evaluate.py
+```
+
+Example evaluation result:
+
+```
+Weather Response Quality (GEval)
+
+Total Test Cases : 2
+Passed           : 2
+Failed           : 0
+Pass Rate        : 100%
+Average Score    : 1.00
 ```
 
 ---
 
-##  Security
+## Evaluation Criteria
 
-API keys are stored in a local `.env` file and are not committed to the repository. Make sure to add `.env` to `.gitignore` before pushing code to GitHub.
+The AI agent is evaluated based on:
+
+- Correctly answering the weather query
+- Mentioning the requested city
+- Including temperature
+- Including humidity
+- Including weather condition
+- Producing a clear and understandable response
 
 ---
-
-##  Assignment Objective
-
-Create an AI agent that asks the user for a city name and returns current weather information. Python was used as the implementation language, with LangChain and Ollama providing the AI capabilities.
-
----
-
